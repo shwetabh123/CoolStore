@@ -15,7 +15,7 @@ app.use("/api", paymentRoute);
 app.get("/api/getkey", (req, res) =>
   res.status(200).json({ key: process.env.RAZORPAY_API_KEY })
 );
-var port=3000
+var port=3001
 app.listen(port, () =>
   console.log(`Server is working on `+port)
 

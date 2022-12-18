@@ -5,8 +5,9 @@ const Card = ({amount,img,checkoutHandler}) => {
   return (
   <VStack>
 
-    <Image src={ img} boxSize={"64"} objectFit="cover"/>
-    <Text>Rs {amount}</Text>
+    <Image src={ img} boxSize={"500"} objectFit="cover"/>
+ 
+    <Text>Price : Rs {amount}</Text>
     <Button on onClick={()=>checkoutHandler(amount)}>But Now</Button>
   </VStack>
   )
