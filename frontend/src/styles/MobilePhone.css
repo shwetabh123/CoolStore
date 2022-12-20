@@ -58,12 +58,12 @@
 .searchbox
 {
 position:relative;
-left: 5vmax;
+left: 1vmax;
 
 }
 .searchbox>input
 {
-position:static;
+position:relative;
 border:none;
 border-bottom: 1px solid rgba(128, 128, 128, 0.76);
 width:10vmax;

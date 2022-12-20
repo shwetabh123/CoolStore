@@ -10,14 +10,24 @@ import AppliancesElectronics from "./AppliancesElectronics.mjs";
 import MenFashion from "./MenFashion.mjs";
 import WomenFashion from "./WomenFashion.mjs";
 import PreNavbar from "./PreNavbar.mjs";
+import Header from "./Header";
+import Footer from "./Footer";
+import { useAuth0 } from "@auth0/auth0-react";
 
+import { Auth0Provider } from "@auth0/auth0-react";
 
 function App() {
+
+
   return (
 
     <div className="App">
+
     <Router>
+   
     <PreNavbar/>
+    <Header/>
+   
       <Routes>
 
         
@@ -34,7 +44,14 @@ function App() {
       
       </Routes>
     </Router>
+
+
+
+
+    <Footer/>
     </div>
+
+    
   );
 }
 

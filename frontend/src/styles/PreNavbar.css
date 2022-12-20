@@ -91,3 +91,33 @@
     color: orangered;
     text-decoration: none;
 } 
+
+
+.logo{
+    background-color: orangered;
+    width: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+ 
+    display: block;
+     margin-left: auto;
+     margin-right: auto;
+   
+} 
+#logoImage1{
+    transition:all 0.2s;
+    width: 2000px;
+    height: 100px;
+    transform: translateX(-28px);
+    margin-left: auto;
+    margin-right: auto;
+    width: 2000%;
+    align-self: center;
+}
+
+#logoImage:hover{
+  
+    transform: translateX(0);
+}

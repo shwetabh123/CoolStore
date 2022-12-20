@@ -4,6 +4,8 @@ import { Box, Stack ,Text} from "@chakra-ui/react"
 import Card from './Card.mjs'
 import axios from "axios";
 import "./styles/MobilePhone.css"
+import MobilePhonedata from "./MobilePhonedata.js";
+import  {useState} from 'react';
 
 const searchIcon = <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
 
@@ -41,6 +43,19 @@ const MobilePhone = () => {
         const razor = new window.Razorpay(options);
         razor.open();
     }
+    const[filter,setFilter]=useState('');
+    const searchText=(event)=>{
+      setFilter(event.target.value);
+    
+    }
+    
+    let datasearch=MobilePhonedata.cardData.filter(item=>{
+    return Object.keys(item).some(key=>
+    
+      item[key].toString().toLowerCase().includes(filter.toString().toLowerCase())
+      )
+    
+    });
     
     return (
 
@@ -54,15 +69,40 @@ const MobilePhone = () => {
        <Link  className="navlinks" to="/AppliancesElectronics" >TV, Appliances, Electronics</Link><span> |  </span>
        <Link className="navlinks" to="/MenFashion" >Men's Fashion</Link><span> |  </span>
        <Link className="navlinks" to="/WomenFashion" >Women's Fashion</Link><span> |  </span>
+
+
+       <div className='searchbox' align="right" >
+      <input type="text" name="search" placeholder="Search Products..." value={filter} onChange={searchText.bind(this)}/>{searchIcon}
+
+     </div>
+
+     </div>
+    
+
+
+<div className="searchclass">
+ 
+
+  {datasearch.map((item,index)=>{
+return(
+<div className='kk'>
+  {/* <img src={item.image} className='test' /> */}
+
+  <Card amount={item.Price} img={item.image}checkoutHandler={checkoutHandler}/>
        
-       <div className='searchbox'>
-         <input type="text" name="search" placeholder="Search Products"/>{searchIcon}
+<h5 className='card-title'align="center">{item.title} </h5>
+<h5 className='card-text'align="center">Description : {item.desc}</h5>
+    </div>
+  
+   
+)
 
-        </div>
+  })}
 
-        </div>
+        
+</div> 
            
-        <Box>
+        {/* <Box>
 
 
 
@@ -74,7 +114,7 @@ const MobilePhone = () => {
             </Stack>
             
             </Box>
-      
+       */}
     </>
        
         
