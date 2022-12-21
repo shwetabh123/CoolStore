@@ -51,7 +51,8 @@ export  const paymentverification  = async(req,res)=>{
       // });
   
       res.redirect(
-        `http://localhost:3001/paymentsuccess?reference=${razorpay_payment_id}`
+        `https://cooolstore.netlify.app/paymentsuccess?reference=${razorpay_payment_id}
+        `
       );
     }
     
