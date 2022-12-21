@@ -31,7 +31,7 @@ export  const paymentverification  = async(req,res)=>{
   
   const body = razorpay_order_id + "|" + razorpay_payment_id;
 
-  const expectedSignature = crypto.createHmac("sha256", "QmBd7plS0oI4HO1HzNKBQQ2T").update(body.toString())
+  const expectedSignature = crypto.createHmac("sha256", "9a6ZAeOFftBXQEFbXQsmi7n5").update(body.toString())
     .digest('hex');
 
     console.log("sig received",razorpay_signature);
